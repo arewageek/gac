@@ -33,17 +33,58 @@ Developers managing multiple GitHub/GitLab accounts (personal, open-source, full
 
 ## Installation
 
-### Method 1: Using `go install` (Recommended)
-If you have Go (1.20+) installed:
+### Method 1: Direct Download (No Go or Compiler Required)
+
+Download the pre-compiled standalone binary for your operating system directly from the [Latest Release](https://github.com/arewageek/gac/releases/latest):
+
+#### Linux (x86_64 / amd64)
+```bash
+curl -fsSL https://github.com/arewageek/gac/releases/latest/download/gac-linux-amd64 -o gac
+chmod +x gac
+sudo mv gac /usr/local/bin/
+```
+
+#### Linux (ARM64)
+```bash
+curl -fsSL https://github.com/arewageek/gac/releases/latest/download/gac-linux-arm64 -o gac
+chmod +x gac
+sudo mv gac /usr/local/bin/
+```
+
+#### macOS (Apple Silicon M1 / M2 / M3 / M4)
+```bash
+curl -fsSL https://github.com/arewageek/gac/releases/latest/download/gac-darwin-arm64 -o gac
+chmod +x gac
+sudo mv gac /usr/local/bin/
+```
+
+#### macOS (Intel)
+```bash
+curl -fsSL https://github.com/arewageek/gac/releases/latest/download/gac-darwin-amd64 -o gac
+chmod +x gac
+sudo mv gac /usr/local/bin/
+```
+
+#### Windows (PowerShell)
+```powershell
+Invoke-WebRequest -Uri "https://github.com/arewageek/gac/releases/latest/download/gac-windows-amd64.exe" -OutFile "$HOME\bin\gac.exe"
+# Ensure $HOME\bin is in your PATH
+```
+
+---
+
+### Method 2: Using `go install` (If Go is installed)
 ```bash
 go install github.com/arewageek/gac@latest
 ```
-> **Tip:** Ensure your Go binary path is in your environment `$PATH`:
+> **Tip:** Ensure your Go bin directory is in your `$PATH`:
 > ```bash
 > export PATH="$PATH:$(go env GOPATH)/bin"
 > ```
 
-### Method 2: Build From Source
+---
+
+### Method 3: Build From Source
 ```bash
 git clone https://github.com/arewageek/gac.git
 cd gac

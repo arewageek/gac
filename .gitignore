@@ -1,5 +1,7 @@
 # Binaries
 gac
+dist/
+*.exe
 
 # Documentation / Internal specs
 PRD.md
